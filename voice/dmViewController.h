@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface dmViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *recordButton;
+- (IBAction)touchDown:(id)sender;
+- (IBAction)touchUp:(id)sender;
 
 @end
