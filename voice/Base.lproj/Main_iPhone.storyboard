@@ -25,10 +25,21 @@
                                     <action selector="touchUp:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Tbk-9G-D6d"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRg-St-4MJ">
+                                <rect key="frame" x="254" y="42" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playLocal:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="m6G-h0-3HP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="playLocalButton" destination="xRg-St-4MJ" id="c6T-0A-UL7"/>
                         <outlet property="recordButton" destination="IBm-iH-MXh" id="dYb-48-gDB"/>
                     </connections>
                 </viewController>

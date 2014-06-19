@@ -22,6 +22,7 @@
 		9BAB794A19531981006A5B2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAB792919531981006A5B2A /* UIKit.framework */; };
 		9BAB795219531981006A5B2A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9BAB795019531981006A5B2A /* InfoPlist.strings */; };
 		9BAB795419531981006A5B2A /* voiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BAB795319531981006A5B2A /* voiceTests.m */; };
+		9BAB795E19532B66006A5B2A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAB795D19532B66006A5B2A /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		9BAB794F19531981006A5B2A /* voiceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "voiceTests-Info.plist"; sourceTree = "<group>"; };
 		9BAB795119531981006A5B2A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9BAB795319531981006A5B2A /* voiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = voiceTests.m; sourceTree = "<group>"; };
+		9BAB795D19532B66006A5B2A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BAB795E19532B66006A5B2A /* AVFoundation.framework in Frameworks */,
 				9BAB792819531981006A5B2A /* CoreGraphics.framework in Frameworks */,
 				9BAB792A19531981006A5B2A /* UIKit.framework in Frameworks */,
 				9BAB792619531981006A5B2A /* Foundation.framework in Frameworks */,
@@ -103,6 +106,7 @@
 		9BAB792419531981006A5B2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9BAB795D19532B66006A5B2A /* AVFoundation.framework */,
 				9BAB792519531981006A5B2A /* Foundation.framework */,
 				9BAB792719531981006A5B2A /* CoreGraphics.framework */,
 				9BAB792919531981006A5B2A /* UIKit.framework */,

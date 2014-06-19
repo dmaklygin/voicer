@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface dmViewController : UIViewController
+@interface dmViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
+@property (weak, nonatomic) IBOutlet UIButton *playLocalButton;
 - (IBAction)touchDown:(id)sender;
 - (IBAction)touchUp:(id)sender;
+- (IBAction)playLocal:(id)sender;
 
 @end
