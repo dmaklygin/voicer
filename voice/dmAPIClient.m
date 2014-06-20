@@ -59,8 +59,8 @@
         return _urlString;
     }
     
-    _urlString = @"http://localhost:3002";
-//    _urlString = @"http://voicer-server.herokuapp.com";
+//    _urlString = @"http://localhost:3002";
+    _urlString = @"http://voicer-server.herokuapp.com";
 
     return _urlString;
 }

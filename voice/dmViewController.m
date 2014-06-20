@@ -28,7 +28,8 @@
     AVAudioSession *session = [AVAudioSession sharedInstance];
     [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
     
-    self.fayeClient = [[MZFayeClient alloc] initWithURL:[NSURL URLWithString:@"ws://localhost:3002/faye"]];
+//    self.fayeClient = [[MZFayeClient alloc] initWithURL:[NSURL URLWithString:@"ws://localhost:3002/faye"]];
+    self.fayeClient = [[MZFayeClient alloc] initWithURL:[NSURL URLWithString:@"ws://voicer-server.herokuapp.com/faye"]];
     
     [self.fayeClient subscribeToChannel:@"/audio" usingBlock:^(NSDictionary *message) {
         NSString *fileName = [message valueForKeyPath:@"fileName"];
