@@ -8,12 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "dmAPIClient.h"
 
 @interface dmViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (weak, nonatomic) IBOutlet UIButton *playLocalButton;
+@property (weak, nonatomic) IBOutlet UIButton *downloadButton;
+@property (weak, nonatomic) IBOutlet UILabel *soundLabel;
+
 - (IBAction)touchDown:(id)sender;
 - (IBAction)touchUp:(id)sender;
 - (IBAction)playLocal:(id)sender;
+- (IBAction)donwload:(id)sender;
 
 @end

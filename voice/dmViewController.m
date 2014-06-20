@@ -27,7 +27,6 @@
     AVAudioSession *session = [AVAudioSession sharedInstance];
     [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
     
-    self.recorder;
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,6 +60,14 @@
         AVAudioSession *session = [AVAudioSession sharedInstance];
         [session setActive:NO error:nil];
         
+        [[dmAPIClient sharedClient] sendAudio:self.recorder.url withCompletionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+            if (error) {
+                NSLog(@"Error to send audio: %@", error);
+                abort();
+            }
+            NSLog(@"response = %@", response);
+        }];
+        
         NSLog(@"stop recording...");
     }
     
@@ -75,6 +82,19 @@
     } else {
         [self.player play];
     }
+}
+
+- (IBAction)donwload:(id)sender {
+    
+    [[dmAPIClient sharedClient] getAudio:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+        if (error) {
+            NSLog(@"Donwload Error: %@, %@", error, [error userInfo]);
+            abort();
+        }
+        
+        self.soundLabel.text = [response suggestedFilename];
+    }];
+    
 }
 
 - (AVAudioRecorder *)recorder

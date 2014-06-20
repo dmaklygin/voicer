@@ -35,12 +35,31 @@
                                     <action selector="playLocal:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="m6G-h0-3HP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zjd-3Q-zwx">
+                                <rect key="frame" x="106" y="175" width="108" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="DownLoad">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="donwload:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Myv-6B-zT2"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQd-mu-fCl">
+                                <rect key="frame" x="20" y="213" width="280" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="downloadButton" destination="Zjd-3Q-zwx" id="tYR-Gp-2tA"/>
                         <outlet property="playLocalButton" destination="xRg-St-4MJ" id="c6T-0A-UL7"/>
                         <outlet property="recordButton" destination="IBm-iH-MXh" id="dYb-48-gDB"/>
+                        <outlet property="soundLabel" destination="XQd-mu-fCl" id="s8v-Jd-R4b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
