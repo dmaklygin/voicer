@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "dmAPIClient.h"
+#import "MZFayeClient.h"
 
-@interface dmViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate>
+@interface dmViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate, MZFayeClientDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (weak, nonatomic) IBOutlet UIButton *playLocalButton;
 @property (weak, nonatomic) IBOutlet UIButton *downloadButton;
 @property (weak, nonatomic) IBOutlet UILabel *soundLabel;
+
+@property (nonatomic, strong) MZFayeClient *fayeClient;
 
 - (IBAction)touchDown:(id)sender;
 - (IBAction)touchUp:(id)sender;

@@ -11,6 +11,7 @@
 @interface dmViewController ()
 @property (nonatomic, strong) AVAudioRecorder *recorder;
 @property (nonatomic, strong) AVAudioPlayer *player;
+@property (nonatomic, strong) AVPlayer *remotePlayer;
 @end
 
 @implementation dmViewController
@@ -26,6 +27,16 @@
     // Setup audio session
     AVAudioSession *session = [AVAudioSession sharedInstance];
     [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    
+    self.fayeClient = [[MZFayeClient alloc] initWithURL:[NSURL URLWithString:@"ws://localhost:3002/faye"]];
+    
+    [self.fayeClient subscribeToChannel:@"/audio" usingBlock:^(NSDictionary *message) {
+        NSString *fileName = [message valueForKeyPath:@"fileName"];
+        [self playRemoteAudio:fileName];
+        NSLog(@"Server %@",message);
+    }];
+    self.fayeClient.delegate = self;
+    [self.fayeClient connect];
     
 }
 
@@ -71,8 +82,8 @@
         NSLog(@"stop recording...");
     }
     
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Record" message:@"Записано" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-    [alertView show];
+//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Record" message:@"Записано" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//    [alertView show];
 }
 
 - (IBAction)playLocal:(id)sender {
@@ -86,15 +97,35 @@
 
 - (IBAction)donwload:(id)sender {
     
-    [[dmAPIClient sharedClient] getAudio:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
-        if (error) {
-            NSLog(@"Donwload Error: %@, %@", error, [error userInfo]);
+    [[dmAPIClient sharedClient] getAudio:^(NSURLSessionDataTask *task, id responseObject) {
+//        if (error) {
+//            NSLog(@"Donwload Error: %@, %@", error, [error userInfo]);
+//            abort();
+//        }
+        if (![responseObject valueForKeyPath:@"success"]) {
+            NSLog(@"ResponseObject Error:");
             abort();
         }
         
-        self.soundLabel.text = [response suggestedFilename];
+        [self playRemoteAudio:[responseObject valueForKeyPath:@"fileName"]];
+        
+        NSLog(@"responseObject = %@", responseObject);
+        
+//        self.soundLabel.text = [response suggestedFilename];
     }];
     
+}
+
+- (void)playRemoteAudio:(NSString *)fileName
+{
+    NSString *audioPath = [NSMutableString stringWithFormat:@"%@/%@", [dmAPIClient sharedClient].urlString, fileName];
+    
+//    if (self.player.playing) {
+//        [self.player stop];
+//    }
+    
+    self.remotePlayer = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:audioPath]];
+    [self.remotePlayer play];
 }
 
 - (AVAudioRecorder *)recorder
@@ -142,6 +173,33 @@
     _player.delegate = self;
     
     return _player;
+}
+
+
+- (void)fayeClient:(MZFayeClient *)client didConnectToURL:(NSURL *)url
+{
+    NSLog(@"didConnectToURL");
+}
+
+- (void)fayeClient:(MZFayeClient *)client didDisconnectWithError:(NSError *)error
+{
+    NSLog(@"didDisconnectWithError: %@,%@", error, [error userInfo]);
+}
+
+
+- (void)fayeClient:(MZFayeClient *)client didSubscribeToChannel:(NSString *)channel
+{
+    NSLog(@"didSubscribeToChannel = %@", channel);
+}
+
+- (void)fayeClient:(MZFayeClient *)client didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError = %@, %@", error, [error userInfo]);
+}
+
+- (void)fayeClient:(MZFayeClient *)client didReceiveMessage:(NSDictionary *)messageData fromChannel:(NSString *)channel
+{
+    NSLog(@"didReceiveMessage = %@", messageData);
 }
 
 @end

@@ -6,17 +6,18 @@
 //  Copyright (c) 2014 Dmitry Maklygin. All rights reserved.
 //
 
-#import "AFURLSessionManager.h"
+#import "AFHTTPSessionManager.h"
 
-@interface dmAPIClient : AFURLSessionManager
+@interface dmAPIClient : AFHTTPSessionManager
 
 @property (nonatomic, strong) NSString *urlString;
 
 + (instancetype)sharedClient;
 
 - (void)sendAudio:(NSURL *)filePath withCompletionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler;
-- (void)getAudio:(void (^)(NSURLResponse *response, NSURL *filePath, NSError *error))completionHandler;
+- (void)getAudio:(void (^)(NSURLSessionDataTask *task, id responseObject))completionHandler;
 
 - (NSString *)getAction:(NSString *)action;
+
 
 @end

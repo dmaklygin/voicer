@@ -32,19 +32,24 @@
     [task resume];
 }
 
-- (void)getAudio:(void (^)(NSURLResponse *response, NSURL *filePath, NSError *error))completionHandler
+- (void)getAudio:(void (^)(NSURLSessionDataTask *task, id responseObject))completionHandler
 {
-    NSURL *url = [NSURL URLWithString:[self getAction:@"get_audio"]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    
-    NSURLSessionDownloadTask *task = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
-        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
-        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
-    } completionHandler:completionHandler];
-    
-    [task resume];
+//    NSURL *url = [NSURL URLWithString:[self getAction:@"get_audio"]];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//    
+//    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+//    
+//    NSURLSessionDownloadTask *task = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+//        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+//        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+//    } completionHandler:completionHandler];
+//    
+//    [task resume];
+    [self GET:[self getAction:@"get_audio"] parameters:nil success:completionHandler failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (error) {
+            NSLog(@"Get Audio Error: %@, %@", error, [error userInfo]);
+        }
+    }];
 }
 
 
