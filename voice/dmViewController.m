@@ -26,7 +26,8 @@
     
     // Setup audio session
     AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+//    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    [session setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionDefaultToSpeaker error:nil];
     
 //    self.fayeClient = [[MZFayeClient alloc] initWithURL:[NSURL URLWithString:@"ws://localhost:3002/faye"]];
     self.fayeClient = [[MZFayeClient alloc] initWithURL:[NSURL URLWithString:@"ws://voicer-server.herokuapp.com/faye"]];

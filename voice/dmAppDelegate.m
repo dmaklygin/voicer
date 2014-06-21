@@ -14,8 +14,9 @@
 {
     // Override point for customization after application launch.
     
-    
-    
+    [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
+        NSLog(@"Request audio record permission = %hhd", granted);
+    }];
     
     return YES;
 }
