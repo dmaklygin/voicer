@@ -8,7 +8,7 @@
 
 #import "dmZoomAnimationController.h"
 
-static CGFloat const MEZoomAnimationScaleFactor = 0.75;
+static CGFloat const MEZoomAnimationScaleFactor = 1;
 
 @interface dmZoomAnimationController ()
 @property (nonatomic, assign) ECSlidingViewControllerOperation operation;

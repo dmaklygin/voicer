@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		68F726DD195CB2250031E8E0 /* dmSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F726DC195CB2250031E8E0 /* dmSlidingViewController.m */; };
-		68F726E1195CB2E30031E8E0 /* dmMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F726E0195CB2E30031E8E0 /* dmMenuViewController.m */; };
 		68F726E7195CB55C0031E8E0 /* dmZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F726E6195CB55C0031E8E0 /* dmZoomAnimationController.m */; };
 		8704F85C673C4D379930F6E2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 036C7878C1C34857A18B2EB8 /* libPods.a */; };
 		9B5F7C151954400A0069DFE6 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 9B5F7C141954400A0069DFE6 /* Podfile */; };
@@ -45,8 +44,6 @@
 		036C7878C1C34857A18B2EB8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F726DB195CB2250031E8E0 /* dmSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmSlidingViewController.h; sourceTree = "<group>"; };
 		68F726DC195CB2250031E8E0 /* dmSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmSlidingViewController.m; sourceTree = "<group>"; };
-		68F726DF195CB2E30031E8E0 /* dmMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmMenuViewController.h; sourceTree = "<group>"; };
-		68F726E0195CB2E30031E8E0 /* dmMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmMenuViewController.m; sourceTree = "<group>"; };
 		68F726E5195CB55C0031E8E0 /* dmZoomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmZoomAnimationController.h; sourceTree = "<group>"; };
 		68F726E6195CB55C0031E8E0 /* dmZoomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmZoomAnimationController.m; sourceTree = "<group>"; };
 		9B5F7C141954400A0069DFE6 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -125,8 +122,6 @@
 		68F726DE195CB2D00031E8E0 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				68F726DF195CB2E30031E8E0 /* dmMenuViewController.h */,
-				68F726E0195CB2E30031E8E0 /* dmMenuViewController.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -382,7 +377,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68F726E1195CB2E30031E8E0 /* dmMenuViewController.m in Sources */,
 				9BAB793F19531981006A5B2A /* dmRecordViewController.m in Sources */,
 				9BAB793219531981006A5B2A /* main.m in Sources */,
 				68F726E7195CB55C0031E8E0 /* dmZoomAnimationController.m in Sources */,

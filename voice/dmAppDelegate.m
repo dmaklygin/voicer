@@ -8,6 +8,8 @@
 
 #import "dmAppDelegate.h"
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 @implementation dmAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -17,6 +19,12 @@
     [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
         NSLog(@"Request audio record permission = %hhd", granted);
     }];
+    
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationbar_bg.png"] forBarMetrics:UIBarMetricsDefault];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{
+                                                           NSForegroundColorAttributeName:UIColorFromRGB(0xeed2c2)
+                                                           }];
     
     return YES;
 }
