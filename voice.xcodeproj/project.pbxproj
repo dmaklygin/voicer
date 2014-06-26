@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68F726DD195CB2250031E8E0 /* dmSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F726DC195CB2250031E8E0 /* dmSlidingViewController.m */; };
+		68F726E1195CB2E30031E8E0 /* dmMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F726E0195CB2E30031E8E0 /* dmMenuViewController.m */; };
+		68F726E7195CB55C0031E8E0 /* dmZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F726E6195CB55C0031E8E0 /* dmZoomAnimationController.m */; };
 		8704F85C673C4D379930F6E2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 036C7878C1C34857A18B2EB8 /* libPods.a */; };
 		9B5F7C151954400A0069DFE6 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 9B5F7C141954400A0069DFE6 /* Podfile */; };
 		9B5F7C19195442E40069DFE6 /* dmAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5F7C18195442E40069DFE6 /* dmAPIClient.m */; };
@@ -18,7 +21,7 @@
 		9BAB793619531981006A5B2A /* dmAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BAB793519531981006A5B2A /* dmAppDelegate.m */; };
 		9BAB793919531981006A5B2A /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BAB793719531981006A5B2A /* Main_iPhone.storyboard */; };
 		9BAB793C19531981006A5B2A /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BAB793A19531981006A5B2A /* Main_iPad.storyboard */; };
-		9BAB793F19531981006A5B2A /* dmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BAB793E19531981006A5B2A /* dmViewController.m */; };
+		9BAB793F19531981006A5B2A /* dmRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BAB793E19531981006A5B2A /* dmRecordViewController.m */; };
 		9BAB794119531981006A5B2A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BAB794019531981006A5B2A /* Images.xcassets */; };
 		9BAB794819531981006A5B2A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAB794719531981006A5B2A /* XCTest.framework */; };
 		9BAB794919531981006A5B2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAB792519531981006A5B2A /* Foundation.framework */; };
@@ -40,6 +43,12 @@
 
 /* Begin PBXFileReference section */
 		036C7878C1C34857A18B2EB8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		68F726DB195CB2250031E8E0 /* dmSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmSlidingViewController.h; sourceTree = "<group>"; };
+		68F726DC195CB2250031E8E0 /* dmSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmSlidingViewController.m; sourceTree = "<group>"; };
+		68F726DF195CB2E30031E8E0 /* dmMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmMenuViewController.h; sourceTree = "<group>"; };
+		68F726E0195CB2E30031E8E0 /* dmMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmMenuViewController.m; sourceTree = "<group>"; };
+		68F726E5195CB55C0031E8E0 /* dmZoomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmZoomAnimationController.h; sourceTree = "<group>"; };
+		68F726E6195CB55C0031E8E0 /* dmZoomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmZoomAnimationController.m; sourceTree = "<group>"; };
 		9B5F7C141954400A0069DFE6 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9B5F7C17195442E40069DFE6 /* dmAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmAPIClient.h; sourceTree = "<group>"; };
 		9B5F7C18195442E40069DFE6 /* dmAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmAPIClient.m; sourceTree = "<group>"; };
@@ -55,8 +64,8 @@
 		9BAB793519531981006A5B2A /* dmAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dmAppDelegate.m; sourceTree = "<group>"; };
 		9BAB793819531981006A5B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		9BAB793B19531981006A5B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		9BAB793D19531981006A5B2A /* dmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dmViewController.h; sourceTree = "<group>"; };
-		9BAB793E19531981006A5B2A /* dmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dmViewController.m; sourceTree = "<group>"; };
+		9BAB793D19531981006A5B2A /* dmRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dmRecordViewController.h; sourceTree = "<group>"; };
+		9BAB793E19531981006A5B2A /* dmRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dmRecordViewController.m; sourceTree = "<group>"; };
 		9BAB794019531981006A5B2A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9BAB794619531981006A5B2A /* voiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = voiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BAB794719531981006A5B2A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -93,6 +102,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68F726D9195CB1E80031E8E0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				68F726E2195CB3210031E8E0 /* Record */,
+				68F726DE195CB2D00031E8E0 /* Menu */,
+				68F726DA195CB1F20031E8E0 /* Sliding */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		68F726DA195CB1F20031E8E0 /* Sliding */ = {
+			isa = PBXGroup;
+			children = (
+				68F726DB195CB2250031E8E0 /* dmSlidingViewController.h */,
+				68F726DC195CB2250031E8E0 /* dmSlidingViewController.m */,
+				68F726E4195CB5330031E8E0 /* Transitions */,
+			);
+			name = Sliding;
+			sourceTree = "<group>";
+		};
+		68F726DE195CB2D00031E8E0 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				68F726DF195CB2E30031E8E0 /* dmMenuViewController.h */,
+				68F726E0195CB2E30031E8E0 /* dmMenuViewController.m */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		68F726E2195CB3210031E8E0 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				9BAB793D19531981006A5B2A /* dmRecordViewController.h */,
+				9BAB793E19531981006A5B2A /* dmRecordViewController.m */,
+			);
+			name = Record;
+			sourceTree = "<group>";
+		};
+		68F726E3195CB5250031E8E0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		68F726E4195CB5330031E8E0 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				68F726E5195CB55C0031E8E0 /* dmZoomAnimationController.h */,
+				68F726E6195CB55C0031E8E0 /* dmZoomAnimationController.m */,
+			);
+			name = Transitions;
+			sourceTree = "<group>";
+		};
 		9B5F7C161954422D0069DFE6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,13 +202,13 @@
 		9BAB792B19531981006A5B2A /* voice */ = {
 			isa = PBXGroup;
 			children = (
+				68F726E3195CB5250031E8E0 /* Classes */,
+				68F726D9195CB1E80031E8E0 /* ViewControllers */,
 				9B5F7C161954422D0069DFE6 /* Network */,
 				9BAB793419531981006A5B2A /* dmAppDelegate.h */,
 				9BAB793519531981006A5B2A /* dmAppDelegate.m */,
 				9BAB793719531981006A5B2A /* Main_iPhone.storyboard */,
 				9BAB793A19531981006A5B2A /* Main_iPad.storyboard */,
-				9BAB793D19531981006A5B2A /* dmViewController.h */,
-				9BAB793E19531981006A5B2A /* dmViewController.m */,
 				9BAB794019531981006A5B2A /* Images.xcassets */,
 				9BAB792C19531981006A5B2A /* Supporting Files */,
 			);
@@ -319,8 +382,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BAB793F19531981006A5B2A /* dmViewController.m in Sources */,
+				68F726E1195CB2E30031E8E0 /* dmMenuViewController.m in Sources */,
+				9BAB793F19531981006A5B2A /* dmRecordViewController.m in Sources */,
 				9BAB793219531981006A5B2A /* main.m in Sources */,
+				68F726E7195CB55C0031E8E0 /* dmZoomAnimationController.m in Sources */,
+				68F726DD195CB2250031E8E0 /* dmSlidingViewController.m in Sources */,
 				9B5F7C19195442E40069DFE6 /* dmAPIClient.m in Sources */,
 				9BAB793619531981006A5B2A /* dmAppDelegate.m in Sources */,
 			);

@@ -1,20 +1,19 @@
 //
-//  dmViewController.m
+//  dmRecordViewController.m
 //  voice
 //
 //  Created by Dmitry Maklygin on 19.06.14.
 //  Copyright (c) 2014 ___FULLUSERNAME___. All rights reserved.
 //
+#import "dmRecordViewController.h"
 
-#import "dmViewController.h"
-
-@interface dmViewController ()
+@interface dmRecordViewController ()
 @property (nonatomic, strong) AVAudioRecorder *recorder;
 @property (nonatomic, strong) AVAudioPlayer *player;
 @property (nonatomic, strong) AVPlayer *remotePlayer;
 @end
 
-@implementation dmViewController
+@implementation dmRecordViewController
 
 - (void)viewDidLoad
 {
@@ -40,6 +39,13 @@
     self.fayeClient.delegate = self;
     [self.fayeClient connect];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
 }
 
 - (void)didReceiveMemoryWarning
@@ -116,6 +122,10 @@
 //        self.soundLabel.text = [response suggestedFilename];
     }];
     
+}
+
+- (IBAction)onMenuButtonTapped:(id)sender {
+    [self.slidingViewController anchorTopViewToRightAnimated:YES];
 }
 
 - (void)playRemoteAudio:(NSString *)fileName
