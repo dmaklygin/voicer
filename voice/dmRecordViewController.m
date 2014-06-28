@@ -46,6 +46,8 @@
     [super viewWillAppear:animated];
     
     [self.navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
+    
+    [self preferredStatusBarUpdateAnimation];
 }
 
 - (void)didReceiveMemoryWarning
@@ -212,6 +214,11 @@
 - (void)fayeClient:(MZFayeClient *)client didReceiveMessage:(NSDictionary *)messageData fromChannel:(NSString *)channel
 {
     NSLog(@"didReceiveMessage = %@", messageData);
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 @end

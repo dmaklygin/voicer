@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		681E1646195E1C5F00BA427D /* dmMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 681E1644195E1C5F00BA427D /* dmMenuTableViewCell.m */; };
+		681E1647195E1C5F00BA427D /* dmMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 681E1645195E1C5F00BA427D /* dmMenuTableViewCell.xib */; };
+		681E164A195EB15500BA427D /* dmMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 681E1649195EB15500BA427D /* dmMenuViewController.m */; };
 		68F726DD195CB2250031E8E0 /* dmSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F726DC195CB2250031E8E0 /* dmSlidingViewController.m */; };
 		68F726E7195CB55C0031E8E0 /* dmZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F726E6195CB55C0031E8E0 /* dmZoomAnimationController.m */; };
 		68F726EA195CD6120031E8E0 /* dmMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F726E9195CD6120031E8E0 /* dmMenuTableViewController.m */; };
@@ -43,6 +46,11 @@
 
 /* Begin PBXFileReference section */
 		036C7878C1C34857A18B2EB8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		681E1643195E1C5F00BA427D /* dmMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmMenuTableViewCell.h; sourceTree = "<group>"; };
+		681E1644195E1C5F00BA427D /* dmMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmMenuTableViewCell.m; sourceTree = "<group>"; };
+		681E1645195E1C5F00BA427D /* dmMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dmMenuTableViewCell.xib; sourceTree = "<group>"; };
+		681E1648195EB15500BA427D /* dmMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmMenuViewController.h; sourceTree = "<group>"; };
+		681E1649195EB15500BA427D /* dmMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmMenuViewController.m; sourceTree = "<group>"; };
 		68F726DB195CB2250031E8E0 /* dmSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmSlidingViewController.h; sourceTree = "<group>"; };
 		68F726DC195CB2250031E8E0 /* dmSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dmSlidingViewController.m; sourceTree = "<group>"; };
 		68F726E5195CB55C0031E8E0 /* dmZoomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dmZoomAnimationController.h; sourceTree = "<group>"; };
@@ -102,6 +110,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		681E1641195E1C3100BA427D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				681E1642195E1C3900BA427D /* Menu */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		681E1642195E1C3900BA427D /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				681E1643195E1C5F00BA427D /* dmMenuTableViewCell.h */,
+				681E1644195E1C5F00BA427D /* dmMenuTableViewCell.m */,
+				681E1645195E1C5F00BA427D /* dmMenuTableViewCell.xib */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
 		68F726D9195CB1E80031E8E0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +153,8 @@
 			children = (
 				68F726E8195CD6120031E8E0 /* dmMenuTableViewController.h */,
 				68F726E9195CD6120031E8E0 /* dmMenuTableViewController.m */,
+				681E1648195EB15500BA427D /* dmMenuViewController.h */,
+				681E1649195EB15500BA427D /* dmMenuViewController.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -202,6 +230,7 @@
 		9BAB792B19531981006A5B2A /* voice */ = {
 			isa = PBXGroup;
 			children = (
+				681E1641195E1C3100BA427D /* Views */,
 				68F726E3195CB5250031E8E0 /* Classes */,
 				68F726D9195CB1E80031E8E0 /* ViewControllers */,
 				9B5F7C161954422D0069DFE6 /* Network */,
@@ -329,6 +358,7 @@
 				9B5F7C151954400A0069DFE6 /* Podfile in Resources */,
 				9BAB793C19531981006A5B2A /* Main_iPad.storyboard in Resources */,
 				9BAB794119531981006A5B2A /* Images.xcassets in Resources */,
+				681E1647195E1C5F00BA427D /* dmMenuTableViewCell.xib in Resources */,
 				9BAB793919531981006A5B2A /* Main_iPhone.storyboard in Resources */,
 				9BAB793019531981006A5B2A /* InfoPlist.strings in Resources */,
 			);
@@ -383,7 +413,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BAB793F19531981006A5B2A /* dmRecordViewController.m in Sources */,
+				681E1646195E1C5F00BA427D /* dmMenuTableViewCell.m in Sources */,
 				9BAB793219531981006A5B2A /* main.m in Sources */,
+				681E164A195EB15500BA427D /* dmMenuViewController.m in Sources */,
 				68F726E7195CB55C0031E8E0 /* dmZoomAnimationController.m in Sources */,
 				68F726EA195CD6120031E8E0 /* dmMenuTableViewController.m in Sources */,
 				68F726DD195CB2250031E8E0 /* dmSlidingViewController.m in Sources */,

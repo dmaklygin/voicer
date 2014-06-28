@@ -8,8 +8,10 @@
 
 #import "dmMenuTableViewController.h"
 
-@interface dmMenuTableViewController ()
+#import "dmMenuTableViewCell.h"
 
+@interface dmMenuTableViewController ()
+@property (nonatomic, strong) NSMutableArray *menuItems;
 @end
 
 @implementation dmMenuTableViewController
@@ -32,6 +34,14 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"dmMenuTableViewCell" bundle:nil] forCellReuseIdentifier:@"MenuTableViewCell"];
+    
+    CGRect bounds = [self.tableView bounds];
+    
+    [self.tableView setFrame:CGRectMake(bounds.origin.x, 44, bounds.size.width, bounds.size.height)];
+    [self.tableView setBounds:CGRectMake(bounds.origin.x, 44, bounds.size.width, bounds.size.height)];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,32 +50,59 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSMutableArray *)menuItems
+{
+    if (_menuItems) {
+        return _menuItems;
+    }
+    
+    _menuItems = [[NSMutableArray alloc] initWithArray:@[@"Profile",
+                                                         @"Chat",
+                                                         @"Settings"
+                                                         ]
+                  ];
+    
+    return _menuItems;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.menuItems count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    dmMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MenuTableViewCell" forIndexPath:indexPath];
+    
+    if (!cell) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"MenuTableViewCell"];
+    }
     
     // Configure the cell...
+    cell.titleLabel.text = self.menuItems[indexPath.row];
+    
+    UIImage *image = [UIImage imageNamed:@"menu_profile.png"];
+    [cell.iconImage setImage:image];
     
     return cell;
 }
-*/
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 47;
+}
+
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -115,5 +152,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 
 @end
