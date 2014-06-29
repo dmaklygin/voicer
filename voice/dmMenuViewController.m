@@ -9,8 +9,13 @@
 #import "dmMenuViewController.h"
 #import "dmMenuTableViewCell.h"
 
+
 @interface dmMenuViewController ()
 @property (nonatomic, strong) NSMutableArray *menuItems;
+
+@property (nonatomic, strong) UIColor *notSelectedColor;
+@property (nonatomic, strong) UIColor *selectedColor;
+
 @end
 
 @implementation dmMenuViewController
@@ -30,6 +35,10 @@
     // Do any additional setup after loading the view.
     [self.tableView registerNib:[UINib nibWithNibName:@"dmMenuTableViewCell" bundle:nil] forCellReuseIdentifier:@"MenuTableViewCell"];
     
+    self.notSelectedColor = UIColorFromRGB(0x222428);
+    self.selectedColor = UIColorFromRGB(0xf08352);
+    
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,12 +112,34 @@
     return 47;
 }
 
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSIndexPath *currentSelectedIndexPath = [tableView indexPathForSelectedRow];
+    if (currentSelectedIndexPath != nil) {
+        [[tableView cellForRowAtIndexPath:currentSelectedIndexPath] setBackgroundColor:self.notSelectedColor];
+    }
+    
+    return indexPath;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [[tableView cellForRowAtIndexPath:indexPath] setBackgroundColor:self.selectedColor];
+    
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (cell.isSelected == YES) {
+        [cell setBackgroundColor:self.selectedColor];
+    } else {
+        [cell setBackgroundColor:self.notSelectedColor];
+    }
+}
+
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
 }
-
-
-
 
 @end

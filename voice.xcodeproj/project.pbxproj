@@ -144,6 +144,13 @@
 			name = Menu;
 			sourceTree = "<group>";
 		};
+		6880FDC91960859B0049B84E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		68F726D9195CB1E80031E8E0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +194,7 @@
 		68F726E3195CB5250031E8E0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6880FDC91960859B0049B84E /* Utils */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -246,6 +254,7 @@
 		9BAB792B19531981006A5B2A /* voice */ = {
 			isa = PBXGroup;
 			children = (
+				9BAB792C19531981006A5B2A /* Supporting Files */,
 				681E1641195E1C3100BA427D /* Views */,
 				68F726E3195CB5250031E8E0 /* Classes */,
 				68F726D9195CB1E80031E8E0 /* ViewControllers */,
@@ -254,7 +263,6 @@
 				9BAB793519531981006A5B2A /* dmAppDelegate.m */,
 				9BAB793719531981006A5B2A /* Main_iPhone.storyboard */,
 				9BAB793A19531981006A5B2A /* Main_iPad.storyboard */,
-				9BAB792C19531981006A5B2A /* Supporting Files */,
 			);
 			path = voice;
 			sourceTree = "<group>";
