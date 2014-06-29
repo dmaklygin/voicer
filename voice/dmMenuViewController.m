@@ -88,7 +88,7 @@
     }
     
     NSString *itemKey = self.menuItems[indexPath.row];
-    NSString *titleKey = [NSString stringWithFormat:@"menu.item.%@", itemKey];
+    NSString *titleKey = [NSString stringWithFormat:@"dm.voice.menu.item.%@", itemKey];
     // Configure the cell...
     cell.titleLabel.text = NSLocalizedString(titleKey, nil);
     

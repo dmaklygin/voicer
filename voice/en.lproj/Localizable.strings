@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  voice
+
+  Created by Дмитрий on 29.06.14.
+  Copyright (c) 2014 Дмитрий. All rights reserved.
+*/
+
+"dm.voice.menu.item.profile" = "Profile";

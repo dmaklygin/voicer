@@ -1,0 +1,15 @@
+
+/* Class = "IBUIButton"; normalTitle = "Record"; ObjectID = "IBm-iH-MXh"; */
+"IBm-iH-MXh.normalTitle" = "Record";
+
+/* Class = "IBUINavigationItem"; title = "Record"; ObjectID = "N4p-oG-sXc"; */
+"N4p-oG-sXc.title" = "Record";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "XQd-mu-fCl"; */
+"XQd-mu-fCl.text" = "Label";
+
+/* Class = "IBUIButton"; normalTitle = "DownLoad"; ObjectID = "Zjd-3Q-zwx"; */
+"Zjd-3Q-zwx.normalTitle" = "DownLoad";
+
+/* Class = "IBUIButton"; normalTitle = "Play"; ObjectID = "xRg-St-4MJ"; */
+"xRg-St-4MJ.normalTitle" = "Play";
