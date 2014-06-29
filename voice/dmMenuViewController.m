@@ -55,9 +55,9 @@
         return _menuItems;
     }
     
-    _menuItems = [[NSMutableArray alloc] initWithArray:@[@"Profile",
-                                                         @"Chat",
-                                                         @"Settings"
+    _menuItems = [[NSMutableArray alloc] initWithArray:@[@"profile",
+                                                         @"chat",
+                                                         @"settings"
                                                          ]
                   ];
     
@@ -87,10 +87,12 @@
         cell = [tableView dequeueReusableCellWithIdentifier:@"MenuTableViewCell"];
     }
     
+    NSString *itemKey = self.menuItems[indexPath.row];
+    NSString *titleKey = [NSString stringWithFormat:@"menu.item.%@", itemKey];
     // Configure the cell...
-    cell.titleLabel.text = self.menuItems[indexPath.row];
+    cell.titleLabel.text = NSLocalizedString(titleKey, nil);
     
-    UIImage *image = [UIImage imageNamed:@"menu_profile.png"];
+    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"menu_%@.png", itemKey]];
     [cell.iconImage setImage:image];
     
     return cell;
