@@ -64,9 +64,14 @@
         return _menuItems;
     }
     
-    _menuItems = [[NSMutableArray alloc] initWithArray:@[@"profile",
-                                                         @"chat",
-                                                         @"settings"
+    _menuItems = [[NSMutableArray alloc] initWithArray:@[@"messages",
+                                                         @"voxers",
+                                                         @"myvoxers",
+                                                         @"settings",
+                                                         @"notifications",
+                                                         @"search",
+                                                         @"messages",
+                                                         @"flows"
                                                          ]
                   ];
     

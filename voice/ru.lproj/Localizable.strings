@@ -7,5 +7,10 @@
 */
 
 "dm.voice.menu.item.profile" = "Профиль";
-"dm.voice.menu.item.chat" = "Чат";
+"dm.voice.menu.item.search" = "Поиск";
 "dm.voice.menu.item.settings" = "Настройки";
+"dm.voice.menu.item.voxers" = "Voxerы";
+"dm.voice.menu.item.myvoxers" = "Мои Voxerы";
+"dm.voice.menu.item.messages" = "Сообщения";
+"dm.voice.menu.item.notifications" = "Оповещения";
+"dm.voice.menu.item.flows" = "Потоки";
